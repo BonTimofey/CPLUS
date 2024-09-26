@@ -33,17 +33,6 @@ int maxAbs(int arr[], int size) {
     return max_value;
 }
 
-// задача 6: Реверс 
-void reverse(int arr[], int size) {
-    for (int i = 0; i < size / 2; i++) {
-        int temp = arr[i];
-        arr[i] = arr[size - 1 - i];
-        arr[size - 1 - i] = temp;
-    }
-}
-
-
-
 // вывод массива
 void printArray(int arr[], int size) {
     for (int i = 0; i < size; i++) {
@@ -58,7 +47,6 @@ void showMenu() {
     cout << "1. Поиск первого вхождения числа\n";
     cout << "2. Поиск последнего вхождения числа\n";
     cout << "3. Поиск максимального по модулю значения\n";
-    cout << "4. Реверс массива\n";
     cout << "0. Выход\n";
 }
 
@@ -86,7 +74,7 @@ int main() {
                 if (result != -1) {
                     cout << "Первое вхождение числа " << x << " на позиции: " << result << endl;
                 } else {
-                    cout << "Число " << x << " не найдено в массиве." << endl;
+                    cout << "1" << endl;
                 }
                 break;
             }
@@ -105,7 +93,7 @@ int main() {
                 if (result != -1) {
                     cout << "Последнее вхождение числа " << x << " на позиции: " << result << endl;
                 } else {
-                    cout << "Число " << x << " не найдено в массиве." << endl;
+                    cout << "1" << endl;
                 }
                 break;
             }
@@ -121,21 +109,6 @@ int main() {
                 cout << "Максимальное по модулю значение в массиве: " << maxAbs(arr, size) << endl;
                 break;
             }
-            case 4: {
-                int size;
-                cout << "Введите размер массива: ";
-                cin >> size;
-                int arr[size];
-                cout << "Введите элементы массива: ";
-                for (int i = 0; i < size; i++) {
-                    cin >> arr[i];
-                }
-                reverse(arr, size);
-                cout << "Массив после реверса: ";
-                printArray(arr, size);
-                break;
-            }
-
             case 0:
                 cout << "Выход из программы." << endl;
                 break;

@@ -75,7 +75,7 @@ bool getValidatedInput(double &start, double &end) {
     }
 }
 
-// Функция для выполнения Задания 1
+// Задание 1
 void runTask1() {
     double start, end, num;
     while (!getValidatedInput(start, end)) {}
@@ -92,7 +92,7 @@ void runTask1() {
     cout << "Число " << num << (segment.isInSegment(num) ? " входит в отрезок." : " не входит в отрезок.") << "\n";
 }
 
-// Функция для выполнения Задания 2
+// Задание 2
 void runTask2() {
     double start, end;
     while (!getValidatedInput(start, end)) {}

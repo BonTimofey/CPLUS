@@ -14,7 +14,13 @@ public:
     // Конструкторы
     LineSegment() : x(0.0), y(0.0) {}
     LineSegment(double start) : x(start), y(start + 1.0) {}
-    LineSegment(double start, double end) : x(start), y(end) {}
+    LineSegment(double start, double end) : x(start), y(end) {
+        {
+        if (x > y) {
+            swap(x,y);
+        }
+    }
+
 
     // Метод для проверки, находится ли число в отрезке
     bool isInSegment(double number) const {

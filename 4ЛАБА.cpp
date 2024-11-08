@@ -19,7 +19,7 @@ public:
     // Метод для проверки, находится ли число в отрезке
     bool isInSegment(double number) const {
         return number >= x && number <= y;
-    }
+    } 
 
     // Перегрузка оператора вывода
     friend ostream& operator<<(ostream& out, const LineSegment& segment) {
@@ -45,8 +45,8 @@ public:
     }
 
     // Оператор приведения к double (y)
-    void toDoubleY() {
-        y = static_cast<double>(y);
+    operator double() const {
+        return y;
     }
 
     // Бинарный оператор +
@@ -129,10 +129,11 @@ void runTask2() {
                 segment.toIntX();
                 cout << "Отрезок после приведения x к int: " << segment << "\n";
                 break;
-            case 4:
-                segment.toDoubleY();
+            case 4: {
+                double y = segment;
                 cout << "Отрезок после приведения y к double: " << segment << "\n";
                 break;
+            }
             case 5: {
                 double d;
                 cout << "Введите число для увеличения границ отрезка: ";

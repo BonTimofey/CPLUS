@@ -153,7 +153,7 @@ void runTask2() {
                     cin.ignore(numeric_limits<streamsize>::max(), '\n');
                     cout << "Ошибка ввода. Пожалуйста, введите целое число.\n";
                 }
-                cout << "Число " << d << (segment > d ? " входит в отрезок.\n" : " не входит в отрезок.\n");
+                cout <<  (segment > d ? "TRUE\n" : " FALSE\n");
                 break;
             }
             case 0:

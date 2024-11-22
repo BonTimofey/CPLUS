@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cmath>
 #include <limits>
-#include <locale>
 
 using namespace std;
 
@@ -15,17 +14,15 @@ public:
     LineSegment() : x(0.0), y(0.0) {}
     LineSegment(double start) : x(start), y(start + 1.0) {}
     LineSegment(double start, double end) : x(start), y(end) {
-        {
         if (x > y) {
             swap(x,y);
         }
     }
 
-
     // Метод для проверки, находится ли число в отрезке
     bool isInSegment(double number) const {
         return number >= x && number <= y;
-    } 
+    }
 
     // Перегрузка оператора вывода
     friend ostream& operator<<(ostream& out, const LineSegment& segment) {
@@ -38,7 +35,7 @@ public:
         return abs(y - x);
     }
 
-    // Унарный оператор ++ 
+    // Унарный оператор ++
     LineSegment& operator++() {
         x += 1.0;
         y += 1.0;
@@ -71,6 +68,7 @@ public:
 // Функция для проверки корректности ввода чисел типа double
 bool getValidatedInput(double &start, double &end) {
     cout << "Введите начало и конец отрезка: ";
+
     if (cin >> start >> end) {
         return true;
     } else {
@@ -79,6 +77,7 @@ bool getValidatedInput(double &start, double &end) {
         cout << "Ошибка ввода. Пожалуйста, введите числа типа double.\n";
         return false;
     }
+
 }
 
 // Задание 1
